@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Russo+One&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+
+.logo-cheval{
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  border-radius: 50%;
+  z-index: 9999;
+}
+
+body{
+  background:#CC0000;
+  font-family:'Russo One',sans-serif;
+  color:#FFD700;
+  min-height:100vh;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+body::before{
+  content:'';position:fixed;inset:0;
+  background:linear-gradient(180deg,#DD1111 0%,#BB0000 40%,#990000 70%,#CC6600 88%,#DDAA44 96%,#EEBB55 100%);
+  z-index:-3;
+}
+
+/* Cathedral — positioned to rise ABOVE the game board */
+.cathedral-bg{
+  position:fixed;
+  bottom:-10px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:0;
+  pointer-events:none;
+  height:95vh;
+  opacity:0.55;
+}
+
+/* Stalin portrait — bottom-right corner, clearly visible */
+.stalin-portrait{
+  position:fixed;
+  right:10px;
+  bottom:10px;
+  z-index:1;
+  pointer-events:none;
+  height:40vh;
+  max-width:250px;
+  opacity:0.5;
+  filter:contrast(1.1);
+  object-fit:contain;
+}
+
+#game-wrapper{
+  display:flex;gap:18px;align-items:center;justify-content:center;padding:12px;
+  width:100vw;height:100vh;
+  position:relative;z-index:2;
+}
+.side-panel{width:170px;min-width:170px;display:flex;flex-direction:column;gap:12px;justify-content:center;}
+.panel-box{
+  background:rgba(0,0,0,0.6);border:3px solid #FFD700;
+  border-radius:4px;padding:10px;text-align:center;
+  backdrop-filter:blur(4px);
+}
+.panel-title{
+  font-family:'Press Start 2P',monospace;font-size:9px;
+  color:#FFD700;letter-spacing:2px;margin-bottom:8px;text-transform:uppercase;
+}
+.panel-value{
+  font-family:'Press Start 2P',monospace;font-size:18px;
+  color:#FFF;text-shadow:2px 2px 0 rgba(0,0,0,0.6);
+}
+
+/* Game container — semi-transparent so cathedral shows through */
+#game-container{
+  position:relative;
+  background:rgba(0,0,0,0.45);
+  border:4px solid #FFD700;
+  box-shadow:0 0 30px rgba(0,0,0,0.5);
+  border-radius:2px;
+  align-self:center;
+}
+canvas#tetris{display:block;}
+
+.header{text-align:center;margin-bottom:8px;}
+.title{
+  font-family:'Russo One',sans-serif;font-size:32px;color:#FFD700;
+  text-shadow:3px 3px 0 #8B0000,0 0 20px rgba(255,215,0,0.4);letter-spacing:8px;
+}
+.subtitle{
+  font-family:'Press Start 2P',monospace;font-size:7px;
+  color:#FFAA00;letter-spacing:3px;margin-top:2px;
+}
+.sickle-hammer{font-size:22px;color:#FFD700;text-shadow:1px 1px 0 #8B0000;opacity:0.8;}
+#next-canvas{display:block;margin:0 auto;background:#111;border-radius:3px;}
+.right-panel{width:170px;min-width:170px;display:flex;flex-direction:column;gap:12px;justify-content:center;}
+.controls-info{
+  font-family:'Press Start 2P',monospace;font-size:7px;
+  line-height:2.2;color:rgba(255,255,255,0.75);
+}
+.controls-info span{color:#FFD700;}
+#music-btn{
+  font-family:'Press Start 2P',monospace;font-size:8px;
+  background:#8B0000;color:#FFD700;border:2px solid #FFD700;
+  padding:8px 10px;cursor:pointer;border-radius:3px;width:100%;
+}
+#music-btn:hover{background:#AA0000;}
+
+/* Overlay — more transparent so cathedral peeks through */
+.overlay{
+  position:absolute;inset:0;
+  background:rgba(0,0,0,0.7);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  z-index:10;gap:14px;
+}
+.overlay.hidden{display:none;}
+.overlay h2{font-family:'Russo One',sans-serif;font-size:26px;color:#FFD700;text-shadow:2px 2px 0 #8B0000;letter-spacing:4px;}
+.overlay p{font-family:'Press Start 2P',monospace;font-size:9px;color:#FFF;opacity:0.8;}
+.overlay p.start-note{margin-top:10px;font-size:7px;}
+.overlay .score-display{font-family:'Press Start 2P',monospace;font-size:14px;color:#FFD700;}
+.start-btn{
+  font-family:'Russo One',sans-serif;font-size:18px;
+  background:#CC0000;color:#FFD700;border:2px solid #FFD700;
+  padding:12px 32px;cursor:pointer;border-radius:4px;letter-spacing:3px;
+}
+.start-btn:hover{background:#8B0000;box-shadow:0 0 20px rgba(255,215,0,0.4);transform:scale(1.05);}
+.level-indicator{display:flex;gap:3px;justify-content:center;margin-top:6px;}
+.level-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.15);border:1px solid #FFD700;}
+.level-dot.active{background:#FFD700;box-shadow:0 0 6px rgba(255,215,0,0.6);}
+.right-panel-footer{text-align:center;margin-top:4px;}
+
+.pmc-logo{
+  position:fixed;
+  left:10px;
+  bottom:10px;
+  z-index:1;
+  pointer-events:none;
+  height:35vh;
+  max-width:200px;
+  opacity:0.7;
+  object-fit:contain;
+}
+
