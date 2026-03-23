@@ -91,17 +91,6 @@ body::before {
   object-fit: contain;
 }
 
-.pmc-logo {
-  position: fixed;
-  left: 10px;
-  bottom: 10px;
-  z-index: 1;
-  pointer-events: none;
-  height: 35vh;
-  max-width: 200px;
-  opacity: 0.7;
-  object-fit: contain;
-}
 
 
 /* ========================
@@ -435,8 +424,7 @@ canvas#tetris {
   }
 
   .cathedral-bg,
-  .stalin-portrait,
-  .pmc-logo {
+  .stalin-portrait {
     display: none;
   }
 
@@ -488,8 +476,7 @@ canvas#tetris {
   }
 
   .cathedral-bg,
-  .stalin-portrait,
-  .pmc-logo {
+  .stalin-portrait {
     display: none;
   }
 
